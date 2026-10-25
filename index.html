@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>settle-up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>settle<span>-</span>up</h1>
+      <p>Group trip, shared flat, one person always paying. Enter what was spent and get the fewest payments that square everyone.</p>
+    </header>
+
+    <div class="cols">
+      <div class="left">
+        <section class="card">
+          <h2>People</h2>
+          <form id="person-form" class="row">
+            <input id="person" placeholder="Add a name" autocomplete="off">
+            <button>Add</button>
+          </form>
+          <div id="people" class="chips"></div>
+        </section>
+
+        <section class="card">
+          <h2>Add an expense</h2>
+          <form id="exp-form">
+            <input id="what" placeholder="What was it for?" autocomplete="off" required>
+            <div class="row">
+              <input id="amount" type="number" step="0.01" min="0.01" placeholder="Amount" required>
+              <select id="payer"></select>
+            </div>
+            <div class="small">Split between</div>
+            <div id="split" class="checks"></div>
+            <button class="primary">Add expense</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="right">
+        <section class="card">
+          <h2>Settle up</h2>
+          <div id="transfers"></div>
+        </section>
+        <section class="card">
+          <h2>Balances</h2>
+          <div id="balances"></div>
+        </section>
+        <section class="card">
+          <h2>Expenses <button id="example" class="link">load an example</button></h2>
+          <ul id="expenses" class="expenses"></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
